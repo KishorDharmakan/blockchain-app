@@ -6,7 +6,7 @@ export const fetchBlocks = () => dispatch => {
     console.log('inside fetchFood Action Creator');
     dispatch(createAction(actionTypes.LOADING_BLOCKS)());
     fetch("https://blockchain.info/blocks/1546860154204?format=json", 
-        { method: "GET", mode: 'no-cors',
+        { method: "GET", mode: 'cors',
           headers: {
                     "Content-Type": "application/json",
                     'Access-Control-Allow-Origin':'*',
