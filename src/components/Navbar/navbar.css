@@ -1,0 +1,14 @@
+.navbgcolor {
+    background-color:white;
+    border-radius: 5px;
+}
+
+.search-button-custom {
+    color:#fc0000 !important;
+    border-color:#fc0000 !important;
+}
+
+.search-button-custom:hover {    
+    background-color:#fc0000 !important;
+    color: white !important;
+}

@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -18,15 +13,29 @@
   color: white;
 }
 
+.add-product-button {
+  margin-left: 20px;
+}
+
+.jumbo {
+  margin-top: 10px;
+}
+
+.company-image {
+  background: url(media/images/crunchy_front.png) center;
+  background-size: 100% 100%;  
+  width: 100%; 
+  height: 100%;
+  padding-top: 50%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-sticky {
+  position: sticky;
+  top: 5px;
 }
