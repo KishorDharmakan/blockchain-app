@@ -1,0 +1,32 @@
+.productname {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.productprice {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 16px;
+    text-align: center;    
+  }
+
+.product {
+    background:white;
+    margin: 16px;
+    width: 200px;
+    border-radius: 2px;    
+    }
+
+.product-image {
+    overflow: hidden;
+    max-height: 200px;
+    margin-top: 10px;
+    width: 100%;
+    }
+.cardstyle {
+    width: 38rem;
+}
+

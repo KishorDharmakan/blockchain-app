@@ -8,6 +8,7 @@ import './index.css';
 import App from './App';
 import reducers from './reducers';
 import ListBlockItems from './components/ListBlockItems/ListBlockItems';
+import ViewBlock from './components/ViewBlock/ViewBlock';
 import Header from '../src/components/common/Header';
 import Footer from '../src/components/common/Footer';
 import Navbar from '../src/components/Navbar/Navbar';
@@ -24,6 +25,7 @@ ReactDOM.render(
           <div className="navbar-sticky"><Navbar /></div>
           <Switch>
             <Route path="/blocks" component={ListBlockItems}/>
+            <Route path="/block/:id" component={ViewBlock}/>
             <Route path="/" component={App}/>
           </Switch>
           <Footer />

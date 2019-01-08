@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Pagination from '../common/Pagination';
+import { Link } from 'react-router-dom';
 import './common.css';
 
 var totalNoOfPages=0;
@@ -152,6 +153,9 @@ export default class Table extends Component {
     const styleObjSlNo={
       width: "7%"
     };
+    const styleObjViewBlock={
+      width: "15%"
+    };
     return (
       <div className="table-custom table-responsive">
         <Pagination getPageData={this.getPageData} totalNoOfPages={totalNoOfPages} currentPage={currentPage}/>
@@ -160,7 +164,8 @@ export default class Table extends Component {
             <tr>
              <th scope="col" style ={styleObjSlNo}>Sl No:</th> 
              {columnHeaders}
-            </tr>
+             <th scope="col" style ={styleObjViewBlock}>View Block</th> 
+            </tr>            
           </thead>
           <tbody>
               {pageTableData !== undefined && pageTableData.length !== undefined
@@ -169,15 +174,18 @@ export default class Table extends Component {
                 //console.log('rowData.length:', Object.keys(rowData).length);
                 let rowDataArray=[];
                 slNoCounter++;
+                let linkColumn=null;
                 for (let i = 0; i < Object.keys(rowData).length; i++) {
                   //console.log('i:',i);
-                 // console.log('Object.keys:', Object.keys(rowData)[i]);
+                  //console.log('Object.keys:', Object.keys(rowData)[i]);
                   const col=Object.keys(rowData)[i];
                   //console.log('col:', col);
                   //console.log('rowData:', rowData[col]);
                   rowDataArray.push(rowData[col])
                 }
-                return <tr key={slNoCounter}><td>{slNoCounter}</td>{rowDataArray.map((rowVal) => (<td key={rowVal}>{rowVal}</td>) )}</tr>;
+                linkColumn=<Link to={`/block/${rowData["height"]}`} > View Block </Link>;
+                
+                return <tr key={slNoCounter}><td>{slNoCounter}</td>{rowDataArray.map((rowVal) => (<td key={rowVal}>{rowVal}</td>) )}<td>{linkColumn}</td></tr>;
               })
               : null}
         

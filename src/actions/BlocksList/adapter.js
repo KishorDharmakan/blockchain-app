@@ -1,6 +1,8 @@
+import moment from 'moment';
 export default function adapter(responseData) {
     return responseData.map(data => {
-        const { height, hash, time } = data; // Get only required columns
+        const { height, hash } = data; // Get only required columns
+         const time = moment(new Date(data.time)).fromNow() 
         return { height, hash, time };
     })
 }

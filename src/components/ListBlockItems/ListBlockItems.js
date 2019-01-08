@@ -20,7 +20,7 @@ class ListBlockItems extends Component {
           ? 
           <Spinner /> 
           : 
-          this.props.error ? <Alert errorMessage={this.props.error}/> :<Table tableData={this.props.data} colWidthPercentage={[10,60,15,10]}/> }
+          this.props.error ? <Alert errorMessage={this.props.error}/> :<Table tableData={this.props.data} colWidthPercentage={[10,50,15,10]}/> }
       </div>
     )
   }
