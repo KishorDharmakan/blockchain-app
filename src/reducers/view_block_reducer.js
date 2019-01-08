@@ -1,7 +1,6 @@
-import { LOADING_BLOCKS } from '../actions/BlocksList/action_types';
-import { FETCH_BLOCKS } from '../actions/BlocksList/action_types';
-import { ERROR_BLOCKS } from '../actions/BlocksList/action_types';
-import { SEARCH_FETCH_BLOCK } from '../actions/BlocksList/action_types';
+import { LOADING_INDIVIDUAL_BLOCK } from '../actions/ViewBlock/action_types';
+import { FETCH_INDIVIDUAL_BLOCK } from '../actions/ViewBlock/action_types';
+import { ERROR_INDIVIDUAL_BLOCK } from '../actions/ViewBlock/action_types';
 
 let stateValue={
     loading: false,
@@ -12,15 +11,12 @@ let stateValue={
 export default function (state = stateValue, action) {
  
     switch (action.type) {
-
-        case LOADING_BLOCKS:
+        case LOADING_INDIVIDUAL_BLOCK:
             return Object.assign({},state, {loading:true});
-        case FETCH_BLOCKS:
+        case FETCH_INDIVIDUAL_BLOCK:
             return Object.assign({},state, {loading:false, data:action.payload, dataCopyForSearch:action.payload});
-        case ERROR_BLOCKS:
+        case ERROR_INDIVIDUAL_BLOCK:
             return Object.assign({},state, {loading:false, data:{}, error:action.payload});
-        case SEARCH_FETCH_BLOCK:
-            return Object.assign({},state, {loading:false, data:action.payload });
         default:
             return state;
     }

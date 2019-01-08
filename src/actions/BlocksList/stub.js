@@ -1,4 +1,4 @@
-const stubData={
+export const stubBlocksData={
     "blocks": [
       {
         "height": 557367,
@@ -848,5 +848,3 @@ const stubData={
       }
     ]
   }
-
-export default stubData;

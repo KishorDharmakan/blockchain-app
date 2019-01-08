@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SearchFoodItems from '../ListBlockItems/SearchFoodItems';
+import SearchBlockItems from '../ListBlockItems/SearchBlockItems';
 import './navbar.css';
 
 class Navbar extends Component {
@@ -9,10 +9,10 @@ class Navbar extends Component {
 
         return (
             <nav className="navbar navbar-expand-lg navbar-light navbar-light navbgcolor">
-                <Link className="navbar-brand" to="/">Home</Link> 
+                <Link className="navbar-brand" to="/">Home</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
-                </button>        
+                </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
@@ -33,24 +33,12 @@ class Navbar extends Component {
                             </div>
                         </li>
                     </ul>
-                    <SearchFoodItems />
+                    <SearchBlockItems />
                 </div>
             </nav>
-            )
-            }
-        }
-        
-// const mapStateToProps = (state) => ({
-//     breadCrumbList: state.breadCrumbList
-// })
-            
-// Navbar.propTypes = {
-//     breadCrumbList: PropTypes.array,
-// }
-
-// Navbar.defaultProps = {
-//     breadCrumbList: [],
-// }
+        )
+    }
+}
 
 export default Navbar;
 

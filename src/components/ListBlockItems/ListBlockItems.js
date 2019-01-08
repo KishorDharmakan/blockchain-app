@@ -6,21 +6,20 @@ import Spinner from '../common/Spinner';
 import Alert from '../common/Alert';
 
 class ListBlockItems extends Component {
-  componentDidMount(){
-    console.log('inside componentDidMount of ListBlockItems this.props:', this.props);
+  componentDidMount() {
     this.props.fetchBlocks();
   }
-  
+
   render() {
-    console.log('inside render of ListBlockItems this.props:', this.props);
-    console.log('inside render of ListBlockItems this.props.error:', this.props.error);
+
     return (
       <div>
-        { this.props.loading 
-          ? 
-          <Spinner /> 
-          : 
-          this.props.error ? <Alert errorMessage={this.props.error}/> :<Table tableData={this.props.data} colWidthPercentage={[10,50,15,10]}/> }
+        {this.props.loading
+          ?
+          <Spinner />
+          :
+          this.props.error ? <Alert errorMessage={this.props.error} />
+            : <Table tableData={this.props.data} colWidthPercentage={[10, 50, 15, 10]} linkColValue="View Block" />}
       </div>
     )
   }
@@ -36,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchBlocks: () => dispatch(fetchBlocksActionCreator())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps) (ListBlockItems);
+export default connect(mapStateToProps, mapDispatchToProps)(ListBlockItems);

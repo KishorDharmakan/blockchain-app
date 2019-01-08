@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlocksWithFilter as fetchBlocksWithFilterActionCreator } from '../../actions/BlocksList/action_creators';
 
-class SearchFoodItems extends Component {
+class SearchBlockItems extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -11,9 +11,6 @@ class SearchFoodItems extends Component {
     }
 
     handleOnChange= (event) => {
-        console.log('inside handleOnChange of SearchFoodItems event:', event);
-        console.log('inside handleOnChange of SearchFoodItems event.target.id:', event.target.id);
-        console.log('inside handleOnChange of SearchFoodItems event.target.value:', event.target.value);
         this.setState({
             searchText:event.target.value
         })
@@ -21,13 +18,11 @@ class SearchFoodItems extends Component {
 
     handleOnSubmit=(e)=>{
         e.preventDefault();
-        console.log('inside handleOnSubmit of SearchFoodItems');
         this.props.fetchBlocksWithFilter(this.props.dataCopyForSearch, this.state.searchText);
     }
 
   render() {
-      console.log('inside render of SearchFoodItems this.props:', this.props);
-    return (
+     return (
       <div>
         <form className="form-inline my-2 my-lg-0">
             <input id="searchItem" className="form-control mr-sm-2" placeholder="Search" aria-label="Search" 
@@ -47,4 +42,4 @@ const mapDispatchToProps = (dispatch) => ({
     fetchBlocksWithFilter: (data, payload) => dispatch(fetchBlocksWithFilterActionCreator(data, payload))
   })
 
-  export default connect(mapStateToProps, mapDispatchToProps) (SearchFoodItems);
+  export default connect(mapStateToProps, mapDispatchToProps) (SearchBlockItems);

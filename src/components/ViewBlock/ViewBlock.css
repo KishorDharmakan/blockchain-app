@@ -5,7 +5,7 @@
     margin-bottom: 8px;
 }
 
-.productprice {
+.blocktitle {
     font-size: 20px;
     font-weight: 500;
     line-height: 22px;
@@ -28,5 +28,9 @@
     }
 .cardstyle {
     width: 38rem;
+}
+
+.blockdescstyle {
+    margin-top:10px;
 }
 

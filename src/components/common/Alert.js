@@ -1,10 +1,7 @@
 import React from 'react';
 
 const Alert = (props) => {
-    console.log('inside Alert props:', props);
-    console.log('inside Alert props.errorMessage:', props.errorMessage);
     const errorMessage=props.errorMessage.toString();
-    console.log('errorMessage:', errorMessage);
     return (
         <div className="alert alert-danger" role="alert">
             {errorMessage}

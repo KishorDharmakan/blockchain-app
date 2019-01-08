@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 import { BlockDescription } from './BlockDescription';
+import { connect } from 'react-redux';
+import { fetchIndividualBlock as fetchIndividualBlockActionCreator } from '../../actions/ViewBlock/action_creators';
 
-export default class ViewBlock extends Component {
+class ViewBlock extends Component {
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    this.props.fetchIndividualBlock(id);
+  }
+
   render() {
-      console.log('inside render of ViewBlock this.props:', this.props);
-      const { id } = this.props.match.params;
-        console.log("id:", id);
     return (
       <div>
-        <BlockDescription />
+        <BlockDescription blockVal={this.props.data} />
       </div>
     )
   }
 }
+
+
+const mapStateToProps = state => ({
+  loading: state.viewBlock.loading,
+  data: state.viewBlock.data,
+  error: state.viewBlock.error
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchIndividualBlock: (hash) => dispatch(fetchIndividualBlockActionCreator(hash))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ViewBlock);
